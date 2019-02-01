@@ -4,12 +4,14 @@ class Carousel {
         this.leftButton = this.carousel.querySelector('.left-button');
         this.rightButton = this.carousel.querySelector('.right-button');
         this.images = this.carousel.querySelectorAll('img');
+        this.images = Array.from(this.images);
         this.index = 0;
+        console.log(this.images.length);
 
         this.selectImage();
         this.rightButton.addEventListener('click', () => {
             this.selectImage();
-            if (this.index === 3) {
+            if (this.index == this.images.length - 1) {
                 this.index = 0;
                 this.selectImage();
             } else {
@@ -22,7 +24,7 @@ class Carousel {
         this.leftButton.addEventListener('click', () => {
             this.selectImage();
             if (this.index === 0) {
-                this.index = 3;
+                this.index = this.images.length - 1;
                 this.selectImage();
             } else {
                 this.index--;
