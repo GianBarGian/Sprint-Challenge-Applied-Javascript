@@ -16,6 +16,7 @@ class Carousel {
                 this.index++;
                 this.selectImage();
             }
+            TweenMax.from(".selected-img", 1, {xPercent: -100});
         })
 
         this.leftButton.addEventListener('click', () => {
@@ -27,8 +28,9 @@ class Carousel {
                 this.index--;
                 this.selectImage();
             }
+            TweenMax.from(".selected-img", 1, {xPercent: +100});
         })
-        
+       
     }
     
     selectImage() {

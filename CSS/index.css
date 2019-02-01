@@ -280,6 +280,7 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
+  z-index: 12;
   cursor: pointer;
 }
 .carousel .left-button:hover,
@@ -304,4 +305,5 @@ body {
 }
 .carousel .selected-img {
   display: block;
+  z-index: 10;
 }
